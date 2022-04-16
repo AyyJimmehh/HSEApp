@@ -2,5 +2,4 @@
 <resources>
     <dimen name="Logosize">28sp</dimen>
     <dimen name="font">15sp</dimen>
-
 </resources>
