@@ -3,7 +3,9 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="..\:/Steve/HSEApp/app/src/main/res/layout/activity_splash.xml" value="0.1390625" />
+        <entry key="..\:/Steve/HSEApp/app/src/main/res/drawable/role_background.xml" value="0.1935" />
+        <entry key="..\:/Steve/HSEApp/app/src/main/res/layout/activity_login.xml" value="0.33125" />
+        <entry key="..\:/Steve/HSEApp/app/src/main/res/layout/activity_splash.xml" value="0.25" />
       </map>
     </option>
   </component>

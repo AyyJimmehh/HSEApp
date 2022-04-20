@@ -7,16 +7,18 @@
     tools:context=".ui.activity.SplashActivity"
     android:background="@color/white">
 
-    <androidx.appcompat.widget.AppCompatTextView
+    <TextView
+        android:id="@+id/title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        android:text="HSE"
-        android:textColor="@color/primary_hse_blue">
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:text="HSE Connect"
+        android:fontFamily="@font/inter_bold"
+        android:textColor="@color/primary_hse_blue"
+        android:textSize="28sp" />
 
-    </androidx.appcompat.widget.AppCompatTextView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
