@@ -86,7 +86,7 @@
             android:layout_marginEnd="27dp"
             android:autofillHints="emailAddress"
             app:layout_constraintTop_toBottomOf="@id/roleContainer"
-            android:background="@color/toolbar_background"
+            android:background="@drawable/loginpass_background"
             android:hint="HSE Email"
 
             android:inputType="textEmailAddress"
@@ -102,7 +102,7 @@
             android:layout_marginTop="16dp"
             android:layout_marginStart="27dp"
             android:layout_marginEnd="27dp"
-            android:background="@color/toolbar_background"
+            android:background="@drawable/loginpass_background"
             app:layout_constraintTop_toBottomOf="@id/login"
             android:hint="Password"
             android:inputType="textPassword"
@@ -128,7 +128,7 @@
             android:gravity="center"
             android:textSize="@dimen/font"
             android:layout_marginTop="10dp"
-            android:background="@color/primary_hse_blue"/>
+            android:background="@drawable/login_background"/>
 
         <TextView
             android:layout_width="wrap_content"
