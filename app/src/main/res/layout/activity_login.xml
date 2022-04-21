@@ -47,7 +47,8 @@
                 android:fontFamily="@font/inter_semibold"
                 android:textAllCaps="false"
                 android:textColor="@color/not_selected"
-                android:textSize="@dimen/font" />
+                android:textSize="@dimen/font"
+                style="@style/Widget.AppCompat.Button.Borderless"/>
 
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/assist"
@@ -60,7 +61,8 @@
                 android:text="Assistant"
                 android:fontFamily="@font/inter_semibold"
                 android:textColor="@color/not_selected"
-                android:textSize="@dimen/font" />
+                android:textSize="@dimen/font"
+                style="@style/Widget.AppCompat.Button.Borderless"/>
 
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/prof"
@@ -73,7 +75,8 @@
                 android:text="Professor"
                 android:fontFamily="@font/inter_semibold"
                 android:textColor="@color/not_selected"
-                android:textSize="@dimen/font" />
+                android:textSize="@dimen/font"
+                style="@style/Widget.AppCompat.Button.Borderless"/>
 
         </LinearLayout>
 

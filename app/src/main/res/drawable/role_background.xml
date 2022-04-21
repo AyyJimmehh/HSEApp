@@ -1,12 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
-<selector xmlns:android="http://schemas.android.com/apk/res/android">
-    <item android:state_pressed="true">
-        <shape android:shape="rectangle">
+<shape android:shape="rectangle"
+    xmlns:android="http://schemas.android.com/apk/res/android">
             <solid android:color="@color/selected_hse_blue"/>
             <stroke android:color="@color/selected_hse_blue"
                 android:width="0dp"/>
             <corners android:radius="10dp"/>
         </shape>
-    </item>
-    <solid />
-</selector>
+
