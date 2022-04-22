@@ -4,8 +4,11 @@ import android.util.Patterns
 
 object Util {
     fun isValidEmail(email:String?): Boolean {
-        return !email.isNullOrEmpty() && Patterns.EMAIL_ADDRESS.matcher(email).matches()
+        return !email.isNullOrEmpty() //&& Patterns.EMAIL_ADDRESS.matcher(email).matches()
+
     }
 
-    //fun isValidPassword()
+    fun isValidPassword(pass:String?): Boolean {
+        return !pass.isNullOrEmpty() && pass.length > 6
+    }
 }

@@ -2,4 +2,5 @@
 <resources>
     <dimen name="Logosize">28sp</dimen>
     <dimen name="font">15sp</dimen>
+    <dimen name="actionbar_title_size">16sp</dimen>
 </resources>

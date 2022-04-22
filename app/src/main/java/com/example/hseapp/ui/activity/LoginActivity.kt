@@ -1,5 +1,6 @@
 package com.example.hseapp.ui.activity
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
@@ -8,6 +9,7 @@ import androidx.databinding.DataBindingUtil
 import com.example.hseapp.R
 import com.example.hseapp.databinding.ActivityLoginBinding
 import com.example.hseapp.utils.Constants
+import com.example.hseapp.utils.Util
 
 class LoginActivity : AppCompatActivity() {
     lateinit var binding: ActivityLoginBinding
@@ -16,6 +18,9 @@ class LoginActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = DataBindingUtil.setContentView(this,R.layout.activity_login)
         initView()
+        binding.loginbutton.setOnClickListener {
+            validation()
+        }
     }
 
     fun initView() {
@@ -44,5 +49,14 @@ class LoginActivity : AppCompatActivity() {
 
         view2.setBackgroundColor(getColor(R.color.white))
         view2.setTextColor(getColor(R.color.not_selected))
+    }
+
+    fun validation() {
+        if (Util.isValidEmail(binding.login.text.toString()) && Util.isValidPassword(binding.password.text.toString())) {
+            Intent(this, HomeActivity::class.java).apply {
+                startActivity(this)
+            }
+            finish()
+        }
     }
 }
