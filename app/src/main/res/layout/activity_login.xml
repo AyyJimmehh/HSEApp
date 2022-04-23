@@ -46,7 +46,7 @@
                 android:text="Student"
                 android:fontFamily="@font/inter_semibold"
                 android:textAllCaps="false"
-                android:textColor="@color/not_selected"
+                android:textColor="@color/primary_hse_blue"
                 android:textSize="@dimen/font"
                 style="@style/Widget.AppCompat.Button.Borderless"/>
 
