@@ -24,7 +24,7 @@
             app:menu="@menu/hse_menu"
             android:background="@color/toolbar_background"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:itemIconTint="@color/not_selected"/>
+            app:itemIconTint="@color/icon_selector"/>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>
