@@ -5,7 +5,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".ui.activity.SplashActivity"
-    android:background="@color/white">
+    android:background="@color/white"
+    android:orientation="vertical">
 
     <TextView
         android:id="@+id/title"
@@ -18,5 +19,5 @@
         android:text="HSE Connect"
         android:fontFamily="@font/inter_bold"
         android:textColor="@color/primary_hse_blue"
-        android:textSize="28sp" />
+        android:textSize="28sp"/>
 </androidx.constraintlayout.widget.ConstraintLayout>

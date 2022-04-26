@@ -1,12 +1,13 @@
-package com.example.hseapp
+package com.example.hseapp.ui.fragments
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import com.example.hseapp.R
 
-class Fragment3 : Fragment() {
+class GradesFragment : Fragment() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -17,12 +18,12 @@ class Fragment3 : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_3, container, false)
+        return inflater.inflate(R.layout.fragment_grades, container, false)
     }
 
     companion object {
         @JvmStatic
         fun newInstance() =
-            Fragment3()
+            GradesFragment()
     }
 }

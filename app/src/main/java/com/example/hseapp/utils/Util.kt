@@ -1,14 +1,13 @@
 package com.example.hseapp.utils
 
-import android.util.Patterns
-
 object Util {
     fun isValidEmail(email:String?): Boolean {
-        return !email.isNullOrEmpty() //&& Patterns.EMAIL_ADDRESS.matcher(email).matches()
-
+        return !email.isNullOrEmpty() //&& Constants.EMAIL_ADDRESS_PATTERN.matcher(email).matches()
     }
 
     fun isValidPassword(pass:String?): Boolean {
         return !pass.isNullOrEmpty() && pass.length > 6
     }
+
+
 }
