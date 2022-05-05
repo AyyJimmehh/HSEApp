@@ -7,19 +7,15 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.viewModels
-import androidx.lifecycle.ViewModelProvider
-import com.example.hseapp.R
-import com.example.hseapp.databinding.ActivityLoginBinding
+import androidx.recyclerview.widget.LinearLayoutManager
+import com.example.hseapp.ui.adapters.CourseAdapter
 import com.example.hseapp.databinding.FragmentCourseBinding
 import com.example.hseapp.viewmodels.CourseViewModel
 
 class CourseFragment : Fragment() {
     val viewModel by viewModels<CourseViewModel>()
     lateinit var binding: FragmentCourseBinding
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-    }
-
+    lateinit var courseAdapter : CourseAdapter
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -31,9 +27,22 @@ class CourseFragment : Fragment() {
         return binding.root
     }
 
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        binding.coursetoolbar.toolbarTitle.text = "Courses"
+        binding.courserecycler.layoutManager = LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL,
+            false)
+        courseAdapter = CourseAdapter(null)
+        binding.courserecycler.adapter = courseAdapter
+
+
+    }
+
     private fun observeLiveData() {
         viewModel.courseData.observe(viewLifecycleOwner) {
             Log.d("Course Data",it.size.toString())
+            courseAdapter.names = it
+            courseAdapter.notifyDataSetChanged()
         }
     }
 
