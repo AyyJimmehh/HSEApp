@@ -20,16 +20,13 @@
             android:background="@color/toolbar_background"/>
 
         <androidx.recyclerview.widget.RecyclerView
-            android:layout_width="wrap_content"
+            android:id="@+id/graderecycler"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             app:layout_constraintTop_toBottomOf="@id/periodrecycler"
-            app:layout_constraintStart_toStartOf="parent">
-            <androidx.recyclerview.widget.RecyclerView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content">
-
-            </androidx.recyclerview.widget.RecyclerView>
-
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginStart="@dimen/counter_margin"
+            android:layout_marginEnd="@dimen/counter_margin">
         </androidx.recyclerview.widget.RecyclerView>
 
     </androidx.constraintlayout.widget.ConstraintLayout>

@@ -37,10 +37,14 @@
                     android:id="@+id/chats"/>
 
                 <include layout="@layout/course_description"
-                    android:id="@+id/course_description"
-                    />
+                    android:id="@+id/course_description"/>
 
-                <include layout="@layout/course_grading"/>
+                <include layout="@layout/course_teaching_staff"
+                    android:id="@+id/course_teaching_staff"/>
+
+                <include layout="@layout/course_grading"
+                    android:id="@+id/course_grading"/>
+
             </LinearLayout>
         </ScrollView>
     </androidx.constraintlayout.widget.ConstraintLayout>

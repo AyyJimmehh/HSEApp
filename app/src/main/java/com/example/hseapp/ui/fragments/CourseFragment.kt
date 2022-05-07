@@ -10,39 +10,57 @@ import androidx.fragment.app.viewModels
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.hseapp.ui.adapters.CourseAdapter
 import com.example.hseapp.databinding.FragmentCourseBinding
+import com.example.hseapp.ui.adapters.TeacherAdapter
 import com.example.hseapp.viewmodels.CourseViewModel
+import com.example.hseapp.viewmodels.TeacherViewModel
 
 class CourseFragment : Fragment() {
-    val viewModel by viewModels<CourseViewModel>()
-    lateinit var binding: FragmentCourseBinding
+    val courseviewModel by viewModels<CourseViewModel>()
+    lateinit var coursebinding: FragmentCourseBinding
     lateinit var courseAdapter : CourseAdapter
+
+    val teacherviewModel by viewModels<TeacherViewModel>()
+    lateinit var teacherAdapter : TeacherAdapter
+
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
         observeLiveData()
-        viewModel.getCourses()
+
+        courseviewModel.getCourses()
+        teacherviewModel.getTeacher()
+
         // Inflate the layout for this fragment
-        binding = FragmentCourseBinding.inflate(inflater, container, false)
-        return binding.root
+        coursebinding = FragmentCourseBinding.inflate(inflater, container, false)
+        return coursebinding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        binding.coursetoolbar.toolbarTitle.text = "Courses"
-        binding.courserecycler.layoutManager = LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL,
+        coursebinding.coursetoolbar.toolbarTitle.text = "Courses"
+        coursebinding.courserecycler.layoutManager = LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL,
             false)
         courseAdapter = CourseAdapter(null)
-        binding.courserecycler.adapter = courseAdapter
+        coursebinding.courserecycler.adapter = courseAdapter
 
-
+        coursebinding.courseTeachingStaff.teacherRecycler.layoutManager = LinearLayoutManager(requireContext(),
+            LinearLayoutManager.VERTICAL, false)
+        teacherAdapter = TeacherAdapter(null)
+        coursebinding.courseTeachingStaff.teacherRecycler.adapter = teacherAdapter
     }
 
     private fun observeLiveData() {
-        viewModel.courseData.observe(viewLifecycleOwner) {
+        courseviewModel.courseData.observe(viewLifecycleOwner) {
             Log.d("Course Data",it.size.toString())
             courseAdapter.names = it
             courseAdapter.notifyDataSetChanged()
+        }
+
+        teacherviewModel.teacherData.observe(viewLifecycleOwner) {
+            Log.d("Teacher Data", it.size.toString())
+            teacherAdapter.names = it
+            teacherAdapter.notifyDataSetChanged()
         }
     }
 

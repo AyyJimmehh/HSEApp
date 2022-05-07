@@ -35,7 +35,11 @@
         <entry key="..\:/Steve/HSEApp/app/src/main/res/layout/fragment_course.xml" value="0.29322916666666665" />
         <entry key="..\:/Steve/HSEApp/app/src/main/res/layout/fragment_grades.xml" value="0.3390625" />
         <entry key="..\:/Steve/HSEApp/app/src/main/res/layout/fragment_profile.xml" value="0.33" />
+        <entry key="..\:/Steve/HSEApp/app/src/main/res/layout/grade_hw_info.xml" value="0.25" />
+        <entry key="..\:/Steve/HSEApp/app/src/main/res/layout/grade_info.xml" value="0.253125" />
         <entry key="..\:/Steve/HSEApp/app/src/main/res/layout/periodlist.xml" value="0.24583333333333332" />
+        <entry key="..\:/Steve/HSEApp/app/src/main/res/layout/profile_info.xml" value="0.253125" />
+        <entry key="..\:/Steve/HSEApp/app/src/main/res/layout/teacher.xml" value="0.5" />
         <entry key="..\:/Steve/HSEApp/app/src/main/res/layout/toolbar.xml" value="0.36770833333333336" />
         <entry key="..\:/Steve/HSEApp/app/src/main/res/menu/hse_menu.xml" value="0.2578125" />
       </map>

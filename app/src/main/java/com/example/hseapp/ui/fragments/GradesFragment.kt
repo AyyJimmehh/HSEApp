@@ -8,23 +8,29 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.viewModels
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.example.hseapp.R
-import com.example.hseapp.databinding.FragmentCourseBinding
 import com.example.hseapp.databinding.FragmentGradesBinding
-import com.example.hseapp.ui.adapters.CourseAdapter
 import com.example.hseapp.ui.adapters.GradeAdapter
+import com.example.hseapp.ui.adapters.PeriodAdapter
 import com.example.hseapp.viewmodels.GradeViewModel
+import com.example.hseapp.viewmodels.PeriodViewModel
 
 class GradesFragment : Fragment() {
-    val viewModel by viewModels<GradeViewModel>()
+    val periodviewModel by viewModels<PeriodViewModel>()
     lateinit var binding: FragmentGradesBinding
-    lateinit var gradeAdapter: GradeAdapter
+    lateinit var periodAdapter: PeriodAdapter
+
+    val gradeviewModel by viewModels<GradeViewModel>()
+    lateinit var gradeAdapter : GradeAdapter
+
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
         observeLiveData()
-        viewModel.getPeriod()
+
+        periodviewModel.getPeriod()
+        gradeviewModel.getGrade()
+
         // Inflate the layout for this fragment
         binding = FragmentGradesBinding.inflate(inflater, container, false)
         return binding.root
@@ -35,15 +41,24 @@ class GradesFragment : Fragment() {
         binding.coursetoolbar.toolbarTitle.text = "Grades"
         binding.periodrecycler.layoutManager = LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL,
             false)
+        periodAdapter = PeriodAdapter(null)
+        binding.periodrecycler.adapter = periodAdapter
+
+        binding.graderecycler.layoutManager = LinearLayoutManager(requireContext(), LinearLayoutManager.VERTICAL,
+        false)
         gradeAdapter = GradeAdapter(null)
-        binding.periodrecycler.adapter = gradeAdapter
-
-
+        binding.graderecycler.adapter = gradeAdapter
     }
 
     private fun observeLiveData() {
-        viewModel.periodData.observe(viewLifecycleOwner) {
+        periodviewModel.periodData.observe(viewLifecycleOwner) {
             Log.d("Period Data",it.size.toString())
+            periodAdapter.names = it
+            periodAdapter.notifyDataSetChanged()
+        }
+
+        gradeviewModel.gradeData.observe(viewLifecycleOwner) {
+            Log.d("Grade Data", it.size.toString())
             gradeAdapter.names = it
             gradeAdapter.notifyDataSetChanged()
         }

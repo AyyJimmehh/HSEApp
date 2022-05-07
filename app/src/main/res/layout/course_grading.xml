@@ -20,6 +20,6 @@
         android:layout_height="wrap_content"
         android:textColor="@color/black"
         android:textSize="@dimen/msgr_size"
-        android:fontFamily="@"
-        tools:text=""/>
+        tools:text="There is a grading formula here written in SF Mono Medium"
+        android:background="@color/toolbar_background"/>
 </LinearLayout>

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:orientation="vertical"
@@ -30,9 +30,9 @@
             app:layout_constraintStart_toStartOf="@id/firstchat">
 
             <ImageView
-                android:layout_width="60dp"
-                android:layout_height="60dp"
-                android:scaleType="centerCrop" />
+                android:layout_width="@dimen/img_dimen"
+                android:layout_height="@dimen/img_dimen"
+                android:scaleType="centerCrop"/>
         </androidx.cardview.widget.CardView>
 
         <TextView
@@ -94,7 +94,7 @@
             android:layout_height="wrap_content"
             app:layout_constraintTop_toTopOf="@id/firstchat_lastmsg"
             app:layout_constraintStart_toEndOf="@id/firstchat_lastmsg"
-            tools:text=".17m"
+            tools:text="·17m"
             android:textColor="@color/not_selected"
             android:textSize="@dimen/msgr_size" />
     </androidx.constraintlayout.widget.ConstraintLayout>
@@ -107,15 +107,15 @@
 
         <androidx.cardview.widget.CardView
             android:id="@+id/secondchat_image"
-            app:cardCornerRadius="30dp"
-            android:layout_width="60dp"
-            android:layout_height="60dp"
+            app:cardCornerRadius="@dimen/img_corner"
+            android:layout_width="@dimen/img_dimen"
+            android:layout_height="@dimen/img_dimen"
             app:layout_constraintTop_toTopOf="@id/secondchat"
             app:layout_constraintStart_toStartOf="@id/secondchat">
 
             <ImageView
-                android:layout_width="60dp"
-                android:layout_height="60dp"
+                android:layout_width="@dimen/img_dimen"
+                android:layout_height="@dimen/img_dimen"
                 android:scaleType="centerCrop"/>
         </androidx.cardview.widget.CardView>
 
@@ -178,7 +178,7 @@
             android:layout_height="wrap_content"
             app:layout_constraintTop_toTopOf="@id/secondchat_lastmsg"
             app:layout_constraintStart_toEndOf="@id/secondchat_lastmsg"
-            tools:text=".17m"
+            tools:text="·17m"
             android:textColor="@color/not_selected"
             android:textSize="@dimen/msgr_size" />
     </androidx.constraintlayout.widget.ConstraintLayout>
@@ -191,15 +191,15 @@
 
         <androidx.cardview.widget.CardView
             android:id="@+id/thirdchat_image"
-            app:cardCornerRadius="30dp"
-            android:layout_width="60dp"
-            android:layout_height="60dp"
+            app:cardCornerRadius="@dimen/img_corner"
+            android:layout_width="@dimen/img_dimen"
+            android:layout_height="@dimen/img_dimen"
             app:layout_constraintTop_toTopOf="@id/thirdchat"
             app:layout_constraintStart_toStartOf="@id/thirdchat">
 
             <ImageView
-                android:layout_width="60dp"
-                android:layout_height="60dp"
+                android:layout_width="@dimen/img_dimen"
+                android:layout_height="@dimen/img_dimen"
                 android:scaleType="centerCrop"/>
         </androidx.cardview.widget.CardView>
 
@@ -264,7 +264,7 @@
             android:layout_height="wrap_content"
             app:layout_constraintTop_toTopOf="@id/thirdchat_lastmsg"
             app:layout_constraintStart_toEndOf="@id/thirdchat_lastmsg"
-            tools:text=".17m"
+            tools:text="·17m"
             android:textColor="@color/not_selected"
             android:textSize="@dimen/msgr_size" />
     </androidx.constraintlayout.widget.ConstraintLayout>

@@ -4,7 +4,7 @@
         <import type="com.example.hseapp.R"/>
         <variable
             name="period"
-            type="com.example.hseapp.datamodels.Grade" />
+            type="com.example.hseapp.datamodels.Period" />
     </data>
     <com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
         android:layout_width="wrap_content"
