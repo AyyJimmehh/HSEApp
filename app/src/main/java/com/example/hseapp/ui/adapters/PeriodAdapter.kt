@@ -5,6 +5,7 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.example.hseapp.databinding.PeriodlistBinding
 import com.example.hseapp.datamodels.Period
+import com.example.hseapp.interfaces.ItemClickListener
 
 class PeriodAdapter(var names :ArrayList<Period>?): RecyclerView.Adapter<RecyclerView.ViewHolder>() {
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder {

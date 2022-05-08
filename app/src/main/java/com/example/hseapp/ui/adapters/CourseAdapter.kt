@@ -5,6 +5,7 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.example.hseapp.databinding.CourselistBinding
 import com.example.hseapp.datamodels.Course
+import com.example.hseapp.interfaces.ItemClickListener
 
 class CourseAdapter(var names: ArrayList<Course>?): RecyclerView.Adapter<RecyclerView.ViewHolder>() {
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder {
