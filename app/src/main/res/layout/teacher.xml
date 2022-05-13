@@ -56,11 +56,22 @@
             android:layout_marginStart="@dimen/tab_top_start_margin"/>
 
         <TextView
+            android:id="@+id/dot"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             app:layout_constraintStart_toEndOf="@id/teacher_role"
             app:layout_constraintTop_toBottomOf="@id/teacher_name"
-            tools:text=" · 193"
+            android:text="·"
+            android:textSize="@dimen/msg_number_size"
+            android:fontFamily="@font/inter_semibold"
+            android:textColor="@color/primary_hse_blue"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toEndOf="@id/dot"
+            app:layout_constraintTop_toBottomOf="@id/teacher_name"
+            tools:text="193"
             android:text="@{teacher.group}"
             android:textSize="@dimen/msg_number_size"
             android:fontFamily="@font/inter_semibold"

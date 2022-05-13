@@ -6,7 +6,7 @@ import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import com.example.hseapp.*
 import com.example.hseapp.databinding.ActivityHomeBinding
-import com.example.hseapp.ui.fragments.CalenderFragment
+import com.example.hseapp.ui.fragments.CalendarFragment
 import com.example.hseapp.ui.fragments.CourseFragment
 import com.example.hseapp.ui.fragments.GradesFragment
 import com.example.hseapp.ui.fragments.ProfileFragment
@@ -16,15 +16,15 @@ class HomeActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = DataBindingUtil.setContentView(this,R.layout.activity_home)
-        val calenderFragment = CalenderFragment.newInstance()
-        setCurrentFragment(calenderFragment)
+        val calendarFragment = CalendarFragment.newInstance()
+        setCurrentFragment(calendarFragment)
         val courseFragment = CourseFragment.newInstance()
         val gradeFragment = GradesFragment.newInstance()
         val userFragment = ProfileFragment.newInstance()
 
         binding.menubar.setOnItemSelectedListener {
             when(it.itemId) {
-                R.id.calender -> setCurrentFragment(calenderFragment)
+                R.id.calender -> setCurrentFragment(calendarFragment)
                 R.id.course -> setCurrentFragment(courseFragment)
                 R.id.grade -> setCurrentFragment(gradeFragment)
                 R.id.profile -> setCurrentFragment(userFragment)

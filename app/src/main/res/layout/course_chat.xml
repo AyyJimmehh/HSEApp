@@ -5,7 +5,8 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:orientation="vertical"
-    android:background="@color/white">
+    android:background="@color/white"
+    android:paddingTop="@dimen/period_horiz_padding">
 
     <TextView
         android:layout_width="wrap_content"
@@ -53,7 +54,7 @@
             android:layout_height="wrap_content"
             app:layout_constraintTop_toBottomOf="@id/firstchat_name"
             app:layout_constraintStart_toEndOf="@id/firstchat_image"
-            tools:text="Me"
+            android:text="Me"
             android:textColor="@color/black"
             android:textSize="@dimen/msgr_size"
             android:fontFamily="@font/inter_regular"
@@ -68,7 +69,7 @@
             app:layout_constraintBottom_toTopOf="@id/firstchat_lastmsg"
             android:padding="@dimen/msg_padding"
             android:layout_marginStart="@dimen/msg_no_margin"
-            tools:text = "123"
+            android:text = "123"
             android:textSize="@dimen/msg_number_size"
             android:fontFamily="@font/inter_medium"
             android:background="@drawable/msg_counter"
@@ -79,7 +80,7 @@
             android:layout_width="@dimen/lastmsg_length"
             android:layout_height="wrap_content"
             android:layout_marginStart="@dimen/period_horiz_padding"
-            tools:text="Big amount of text that cannot fully be seen"
+            android:text="Big amount of text that cannot fully be seen"
             android:ellipsize="end"
             android:fontFamily="@font/inter_regular"
             android:maxLines="1"
@@ -94,7 +95,7 @@
             android:layout_height="wrap_content"
             app:layout_constraintTop_toTopOf="@id/firstchat_lastmsg"
             app:layout_constraintStart_toEndOf="@id/firstchat_lastmsg"
-            tools:text="·17m"
+            android:text="·17m"
             android:textColor="@color/not_selected"
             android:textSize="@dimen/msgr_size" />
     </androidx.constraintlayout.widget.ConstraintLayout>
@@ -137,7 +138,7 @@
             android:layout_height="wrap_content"
             app:layout_constraintTop_toBottomOf="@id/secondchat_name"
             app:layout_constraintStart_toEndOf="@id/secondchat_image"
-            tools:text="Me"
+            android:text="Me"
             android:textColor="@color/black"
             android:textSize="@dimen/msgr_size"
             android:fontFamily="@font/inter_regular"
@@ -152,7 +153,7 @@
             app:layout_constraintBottom_toTopOf="@id/secondchat_lastmsg"
             android:padding="@dimen/msg_padding"
             android:layout_marginStart="@dimen/msg_no_margin"
-            tools:text = "123"
+            android:text = "123"
             android:textSize="@dimen/msg_number_size"
             android:fontFamily="@font/inter_medium"
             android:background="@drawable/msg_counter"
@@ -164,7 +165,7 @@
             android:layout_height="wrap_content"
             app:layout_constraintTop_toBottomOf="@id/secondchat_lastuser"
             app:layout_constraintStart_toEndOf="@id/secondchat_image"
-            tools:text="Big amount of text that cannot fully be seen"
+            android:text="Big amount of text that cannot fully be seen"
             android:textColor="@color/not_selected"
             android:textSize="@dimen/msgr_size"
             android:fontFamily="@font/inter_regular"
@@ -178,7 +179,7 @@
             android:layout_height="wrap_content"
             app:layout_constraintTop_toTopOf="@id/secondchat_lastmsg"
             app:layout_constraintStart_toEndOf="@id/secondchat_lastmsg"
-            tools:text="·17m"
+            android:text="·17m"
             android:textColor="@color/not_selected"
             android:textSize="@dimen/msgr_size" />
     </androidx.constraintlayout.widget.ConstraintLayout>
@@ -223,7 +224,7 @@
             android:layout_height="wrap_content"
             app:layout_constraintTop_toBottomOf="@id/thirdchat_name"
             app:layout_constraintStart_toEndOf="@id/thirdchat_image"
-            tools:text="Me"
+            android:text="Me"
             android:textColor="@color/black"
             android:textSize="@dimen/msgr_size"
             android:fontFamily="@font/inter_regular"
@@ -238,7 +239,7 @@
             app:layout_constraintBottom_toTopOf="@id/thirdchat_lastmsg"
             android:padding="@dimen/msg_padding"
             android:layout_marginStart="@dimen/msg_no_margin"
-            tools:text = "123"
+            android:text = "123"
             android:textSize="@dimen/msg_number_size"
             android:fontFamily="@font/inter_medium"
             android:background="@drawable/msg_counter"
@@ -250,7 +251,7 @@
             android:layout_height="wrap_content"
             app:layout_constraintTop_toBottomOf="@id/thirdchat_lastuser"
             app:layout_constraintStart_toEndOf="@id/thirdchat_image"
-            tools:text="Big amount of text that cannot fully be seen"
+            android:text="Big amount of text that cannot fully be seen"
             android:textColor="@color/not_selected"
             android:textSize="@dimen/msgr_size"
             android:fontFamily="@font/inter_regular"
@@ -264,7 +265,7 @@
             android:layout_height="wrap_content"
             app:layout_constraintTop_toTopOf="@id/thirdchat_lastmsg"
             app:layout_constraintStart_toEndOf="@id/thirdchat_lastmsg"
-            tools:text="·17m"
+            android:text="·17m"
             android:textColor="@color/not_selected"
             android:textSize="@dimen/msgr_size" />
     </androidx.constraintlayout.widget.ConstraintLayout>

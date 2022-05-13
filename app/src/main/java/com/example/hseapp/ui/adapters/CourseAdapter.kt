@@ -7,10 +7,10 @@ import com.example.hseapp.databinding.CourselistBinding
 import com.example.hseapp.datamodels.Course
 import com.example.hseapp.interfaces.ItemClickListener
 
-class CourseAdapter(var names: ArrayList<Course>?): RecyclerView.Adapter<RecyclerView.ViewHolder>() {
+class CourseAdapter(var names: ArrayList<Course>?, val obj: ItemClickListener): RecyclerView.Adapter<RecyclerView.ViewHolder>() {
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder {
         val binding = CourselistBinding.inflate(LayoutInflater.from(parent.context), parent, false)
-        return CourseHolder(binding)
+        return CourseHolder(binding, obj)
     }
 
     override fun onBindViewHolder(holder: RecyclerView.ViewHolder, position: Int) {
@@ -24,9 +24,13 @@ class CourseAdapter(var names: ArrayList<Course>?): RecyclerView.Adapter<Recycle
             0
     }
 
-    class CourseHolder(val binding: CourselistBinding) : RecyclerView.ViewHolder(binding.root) {
+    class CourseHolder(val binding: CourselistBinding, val obj: ItemClickListener) : RecyclerView.ViewHolder(binding.root) {
         fun bind(course: Course) {
             binding.course = course
+
+            binding.root.setOnClickListener {
+                obj.onCourseClick(course)
+            }
         }
     }
 }

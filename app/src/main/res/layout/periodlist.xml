@@ -38,7 +38,7 @@
                 android:text="@{period.period}"
                 android:textSize="@dimen/font"
                 android:fontFamily="@font/inter_medium"
-                android:textColor="@color/primary_hse_blue"/>
+                android:textColor="@color/not_selected"/>
 
         </androidx.constraintlayout.widget.ConstraintLayout>
     </com.google.android.material.card.MaterialCardView>
