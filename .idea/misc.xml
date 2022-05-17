@@ -6,10 +6,13 @@
         <entry key="..\:/Steve/HSEApp/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.1605" />
         <entry key="..\:/Steve/HSEApp/app/src/main/res/drawable/bottom_navigation_icon_selector.xml" value="0.151" />
         <entry key="..\:/Steve/HSEApp/app/src/main/res/drawable/default_course_background.xml" value="0.1855" />
+        <entry key="..\:/Steve/HSEApp/app/src/main/res/drawable/ic_arrow_down.xml" value="0.1985" />
+        <entry key="..\:/Steve/HSEApp/app/src/main/res/drawable/ic_arrow_side.xml" value="0.1985" />
         <entry key="..\:/Steve/HSEApp/app/src/main/res/drawable/ic_calender.xml" value="0.193" />
         <entry key="..\:/Steve/HSEApp/app/src/main/res/drawable/ic_course.xml" value="0.193" />
         <entry key="..\:/Steve/HSEApp/app/src/main/res/drawable/ic_grades.xml" value="0.193" />
         <entry key="..\:/Steve/HSEApp/app/src/main/res/drawable/ic_launcher_background.xml" value="0.1605" />
+        <entry key="..\:/Steve/HSEApp/app/src/main/res/drawable/ic_online.xml" value="0.209" />
         <entry key="..\:/Steve/HSEApp/app/src/main/res/drawable/ic_user.xml" value="0.168" />
         <entry key="..\:/Steve/HSEApp/app/src/main/res/drawable/icon_selector.xml" value="0.139" />
         <entry key="..\:/Steve/HSEApp/app/src/main/res/drawable/login_background.xml" value="0.1595" />
@@ -23,6 +26,7 @@
         <entry key="..\:/Steve/HSEApp/app/src/main/res/layout/activity_splash.xml" value="0.25" />
         <entry key="..\:/Steve/HSEApp/app/src/main/res/layout/calendar_day.xml" value="0.3171875" />
         <entry key="..\:/Steve/HSEApp/app/src/main/res/layout/calendar_timetable.xml" value="0.33" />
+        <entry key="..\:/Steve/HSEApp/app/src/main/res/layout/calendar_toolbar.xml" value="0.25052083333333336" />
         <entry key="..\:/Steve/HSEApp/app/src/main/res/layout/chat_description.xml" value="0.33645833333333336" />
         <entry key="..\:/Steve/HSEApp/app/src/main/res/layout/course_chat.xml" value="0.33" />
         <entry key="..\:/Steve/HSEApp/app/src/main/res/layout/course_description.xml" value="0.33645833333333336" />
@@ -33,6 +37,7 @@
         <entry key="..\:/Steve/HSEApp/app/src/main/res/layout/fragment_2.xml" value="0.2682291666666667" />
         <entry key="..\:/Steve/HSEApp/app/src/main/res/layout/fragment_3.xml" value="0.2682291666666667" />
         <entry key="..\:/Steve/HSEApp/app/src/main/res/layout/fragment_4.xml" value="0.2682291666666667" />
+        <entry key="..\:/Steve/HSEApp/app/src/main/res/layout/fragment_calendar.xml" value="0.22" />
         <entry key="..\:/Steve/HSEApp/app/src/main/res/layout/fragment_calender.xml" value="0.29322916666666665" />
         <entry key="..\:/Steve/HSEApp/app/src/main/res/layout/fragment_course.xml" value="0.33" />
         <entry key="..\:/Steve/HSEApp/app/src/main/res/layout/fragment_grades.xml" value="0.3390625" />

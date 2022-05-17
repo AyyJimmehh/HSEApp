@@ -30,10 +30,6 @@ class CourseFragment : Fragment(),ItemClickListener {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        observeLiveData()
-
-        courseviewModel.getCourses()
-        teacherviewModel.getTeacher()
 
         // Inflate the layout for this fragment
         coursebinding = FragmentCourseBinding.inflate(inflater, container, false)
@@ -51,6 +47,11 @@ class CourseFragment : Fragment(),ItemClickListener {
             LinearLayoutManager.VERTICAL, false)
         teacherAdapter = TeacherAdapter(null)
         coursebinding.courseTeachingStaff.teacherRecycler.adapter = teacherAdapter
+
+        observeLiveData()
+
+        courseviewModel.getCourses()
+        teacherviewModel.getTeacher()
     }
 
     private fun observeLiveData() {

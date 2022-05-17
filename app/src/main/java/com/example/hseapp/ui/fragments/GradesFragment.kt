@@ -30,10 +30,6 @@ class GradesFragment : Fragment(), ItemClickListener {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        observeLiveData()
-
-        periodviewModel.getPeriod()
-        gradeviewModel.getGrade()
 
         // Inflate the layout for this fragment
         gradebinding = FragmentGradesBinding.inflate(inflater, container, false)
@@ -51,6 +47,11 @@ class GradesFragment : Fragment(), ItemClickListener {
         false)
         gradeAdapter = GradeAdapter(null)
         gradebinding.graderecycler.adapter = gradeAdapter
+
+        observeLiveData()
+
+        periodviewModel.getPeriod()
+        gradeviewModel.getGrade()
     }
 
     private fun observeLiveData() {

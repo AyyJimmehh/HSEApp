@@ -28,11 +28,16 @@ class DayAdapter(var names :ArrayList<Day>?): RecyclerView.Adapter<RecyclerView.
     class DayHolder(val binding: CalendarDayBinding) : RecyclerView.ViewHolder(binding.root) {
         fun bind(day: Day) {
             binding.day.text = day.day
-            binding.table.layoutManager = LinearLayoutManager(binding.root.context, LinearLayoutManager.VERTICAL,
-                false)
-            var timetableadapter = TimetableAdapter(day.classes)
-            binding.table.adapter = timetableadapter
-            //binding.day = period
+            binding.table.layoutManager = LinearLayoutManager(
+                binding.root.context, LinearLayoutManager.VERTICAL,
+                false
+            )
+            if (day.classes != null) {
+                var timetableadapter = TimetableAdapter(day.classes)
+                binding.table.adapter = timetableadapter
+            }
+
+            else{}
         }
     }
 }

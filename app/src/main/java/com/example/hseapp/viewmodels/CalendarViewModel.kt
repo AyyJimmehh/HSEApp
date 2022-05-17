@@ -14,12 +14,16 @@ class CalendarViewModel : ViewModel() {
         timetablelist.add(Timetable("11:10", "12:30", "LECTURE", "Machine Learning 1 (Eng)", "Online"))
 
         var tableList = ArrayList<Day>()
-        tableList.add(Day("MONDAY, 10 JANUARY", timetablelist))
-        tableList.add(Day("TUESDAY, 11 JANUARY", timetablelist))
-        tableList.add(Day("WEDNESDAY, 12 JANUARY", timetablelist))
-        tableList.add(Day("THURSDAT, 13 JANUARY", timetablelist))
-        tableList.add(Day("FRIDAY, 14 JANUARY", timetablelist))
+        tableList.add(Day("MONDAY, 10 JANUARY", timetablelist, null))
+        tableList.add(Day("TUESDAY, 11 JANUARY", timetablelist, null))
+        tableList.add(Day("WEDNESDAY, 12 JANUARY", timetablelist, null))
+        tableList.add(Day("THURSDAT, 13 JANUARY", timetablelist, null))
+        tableList.add(Day("FRIDAY, 14 JANUARY", timetablelist, null))
 
         timetableData.value = tableList
+    }
+
+    fun getAssignments() {
+
     }
 }

@@ -9,8 +9,10 @@
         tools:context=".ui.fragments.CalendarFragment"
         android:orientation="vertical">
 
-        <include layout="@layout/toolbar"
+        <include layout="@layout/calendar_toolbar"
             android:id="@+id/calendertoolbar"/>
+
+
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/timetable"

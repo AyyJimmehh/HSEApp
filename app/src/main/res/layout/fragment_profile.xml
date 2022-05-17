@@ -10,7 +10,7 @@
         android:orientation="vertical">
 
         <include layout="@layout/toolbar"
-            android:id="@+id/profile_toolbar"/>
+            android:id="@+id/profiletoolbar"/>
 
         <include layout="@layout/profile_info"
             android:id="@+id/profile_info"/>
