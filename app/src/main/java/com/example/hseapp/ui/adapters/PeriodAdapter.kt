@@ -3,6 +3,7 @@ package com.example.hseapp.ui.adapters
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
+import com.example.hseapp.R
 import com.example.hseapp.databinding.PeriodlistBinding
 import com.example.hseapp.datamodels.Period
 import com.example.hseapp.interfaces.ItemClickListener
@@ -16,6 +17,7 @@ class PeriodAdapter(var names:ArrayList<Period>?, val obj: GradesFragment): Recy
 
     override fun onBindViewHolder(holder: RecyclerView.ViewHolder, position: Int) {
         (holder as PeriodHolder).bind(names!![position])
+
     }
 
     override fun getItemCount(): Int {

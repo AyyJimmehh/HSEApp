@@ -13,8 +13,11 @@ import com.example.hseapp.ui.fragments.ProfileFragment
 
 class HomeActivity : AppCompatActivity() {
     lateinit var binding: ActivityHomeBinding
+
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
         binding = DataBindingUtil.setContentView(this,R.layout.activity_home)
         val calendarFragment = CalendarFragment.newInstance()
         setCurrentFragment(calendarFragment)
@@ -34,6 +37,7 @@ class HomeActivity : AppCompatActivity() {
     }
 
     fun setCurrentFragment(fragment: Fragment) {
-        supportFragmentManager.beginTransaction().replace(R.id.homecontainer, fragment, "Menu Item").addToBackStack("Menu Item").commit()
+        val Transaction = supportFragmentManager.beginTransaction()
+        Transaction.replace(R.id.homecontainer, fragment, "Menu Item").addToBackStack("Menu Item").commit()
     }
 }

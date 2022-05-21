@@ -2,6 +2,7 @@ package com.example.hseapp.viewmodels
 
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
+import com.example.hseapp.datamodels.Assignment
 import com.example.hseapp.datamodels.Day
 import com.example.hseapp.datamodels.Timetable
 
@@ -24,6 +25,17 @@ class CalendarViewModel : ViewModel() {
     }
 
     fun getAssignments() {
+        var assignmentlist = ArrayList<Assignment>()
+        assignmentlist.add(Assignment("Machine Learning 1 (Eng)", "HW 14: Venus and Mars", "Till 23:59", "Submitted at 00:00"))
+        assignmentlist.add(Assignment("Optimization Methods (Eng)", "HW 2: Optimizer", "Till 23:59", "Submitted at 00:00"))
 
+        var tableList = ArrayList<Day>()
+        tableList.add(Day("MONDAY, 10 JANUARY", null, assignmentlist))
+        tableList.add(Day("TUESDAY, 11 JANUARY", null, assignmentlist))
+        tableList.add(Day("WEDNESDAY, 12 JANUARY", null, assignmentlist))
+        tableList.add(Day("THURSDAT, 13 JANUARY", null, assignmentlist))
+        tableList.add(Day("FRIDAY, 14 JANUARY", null, assignmentlist))
+
+        timetableData.value = tableList
     }
 }

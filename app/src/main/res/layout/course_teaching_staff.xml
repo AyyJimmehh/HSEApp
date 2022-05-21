@@ -14,7 +14,7 @@
             android:textColor="@color/black"
             android:textSize="@dimen/font"
             android:fontFamily="@font/inter_medium"
-            android:layout_marginBottom="@dimen/teaching_staff_bottom_margin"/>
+            android:layout_marginBottom="@dimen/course_description_margin"/>
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/teacher_recycler"

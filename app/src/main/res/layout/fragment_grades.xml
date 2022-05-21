@@ -21,20 +21,10 @@
             android:paddingStart="22dp"/>
 
         <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/subperiodrecycler"
-            app:layout_constraintTop_toBottomOf="@id/periodrecycler"
-            android:layout_width="match_parent"
-            android:layout_height="?actionBarSize"
-            android:orientation="horizontal"
-            android:background="@color/toolbar_background"
-            android:paddingStart="22dp"
-            android:visibility="gone"/>
-
-        <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/graderecycler"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            app:layout_constraintTop_toBottomOf="@id/subperiodrecycler"
+            app:layout_constraintTop_toBottomOf="@id/periodrecycler"
             app:layout_constraintStart_toStartOf="parent"
             android:layout_marginStart="@dimen/counter_margin"
             android:layout_marginEnd="@dimen/counter_margin">

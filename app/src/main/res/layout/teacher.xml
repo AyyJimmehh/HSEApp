@@ -13,7 +13,7 @@
         xmlns:tools="http://schemas.android.com/tools"
         android:orientation="vertical"
         android:background="@color/white"
-        android:paddingBottom="@dimen/staff_padding">
+        android:paddingBottom="@dimen/profile_corner">
 
         <androidx.cardview.widget.CardView
             android:id="@+id/teacher_img"

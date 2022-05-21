@@ -26,7 +26,6 @@ class ProfileFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         profilebinding.profiletoolbar.toolbarTitle.text = "Profile"
-        Glide.with(this).load("http://goo.gl/gEgYUd").into(profilebinding.profileInfo.prfimg)
     }
 
     companion object {

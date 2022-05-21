@@ -4,9 +4,10 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.example.hseapp.datamodels.Course
 import com.example.hseapp.datamodels.Grade
+import com.example.hseapp.datamodels.StudyUnit
 
 class GradeViewModel: ViewModel() {
-    var gradeData: MutableLiveData<ArrayList<Grade>> = MutableLiveData()
+    var gradeData: MutableLiveData<ArrayList<StudyUnit>> = MutableLiveData()
 
     fun getGrade() {
         var gradeList = ArrayList<Grade>()
@@ -21,7 +22,10 @@ class GradeViewModel: ViewModel() {
         gradeList.add(Grade("24", "Venus and Mars", "10", false))
         gradeList.add(Grade("25", "Venus and Mars", "10", false))
 
-        gradeData.value = gradeList
+        var unitList = ArrayList<StudyUnit>()
+        unitList.add(StudyUnit("MODULE 1", gradeList))
+        unitList.add(StudyUnit("MODULE 2", gradeList))
 
+        gradeData.value = unitList
     }
 }

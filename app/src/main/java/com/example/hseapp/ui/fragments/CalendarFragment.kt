@@ -32,14 +32,14 @@ class CalendarFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        calendarbinding = FragmentCalendarBinding.inflate(inflater, container, false)
+        calendarbinding = FragmentCalendarBinding.inflate(inflater,
+            container, false)
         return calendarbinding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-
-        calendarbinding.timetable.layoutManager = LinearLayoutManager(requireContext(), LinearLayoutManager.VERTICAL,
-            false)
+        calendarbinding.timetable.layoutManager = LinearLayoutManager(requireContext(),
+            LinearLayoutManager.VERTICAL, false)
         dayAdapter = DayAdapter(null)
         calendarbinding.timetable.adapter = dayAdapter
 

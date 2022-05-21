@@ -37,7 +37,10 @@ class DayAdapter(var names :ArrayList<Day>?): RecyclerView.Adapter<RecyclerView.
                 binding.table.adapter = timetableadapter
             }
 
-            else{}
+            else {
+                var assignmentAdapter = AssignmentAdapter(day.assignments)
+                binding.table.adapter = assignmentAdapter
+            }
         }
     }
 }

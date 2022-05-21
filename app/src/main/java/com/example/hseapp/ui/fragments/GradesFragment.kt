@@ -13,8 +13,8 @@ import com.example.hseapp.databinding.FragmentGradesBinding
 import com.example.hseapp.datamodels.Course
 import com.example.hseapp.datamodels.Period
 import com.example.hseapp.interfaces.ItemClickListener
-import com.example.hseapp.ui.adapters.GradeAdapter
 import com.example.hseapp.ui.adapters.PeriodAdapter
+import com.example.hseapp.ui.adapters.StudyUnitAdapter
 import com.example.hseapp.viewmodels.GradeViewModel
 import com.example.hseapp.viewmodels.PeriodViewModel
 
@@ -24,7 +24,7 @@ class GradesFragment : Fragment(), ItemClickListener {
     lateinit var periodAdapter: PeriodAdapter
 
     val gradeviewModel by viewModels<GradeViewModel>()
-    lateinit var gradeAdapter : GradeAdapter
+    lateinit var studyunitadapter : StudyUnitAdapter
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -45,8 +45,8 @@ class GradesFragment : Fragment(), ItemClickListener {
 
         gradebinding.graderecycler.layoutManager = LinearLayoutManager(requireContext(), LinearLayoutManager.VERTICAL,
         false)
-        gradeAdapter = GradeAdapter(null)
-        gradebinding.graderecycler.adapter = gradeAdapter
+        studyunitadapter = StudyUnitAdapter(null)
+        gradebinding.graderecycler.adapter = studyunitadapter
 
         observeLiveData()
 
@@ -63,8 +63,8 @@ class GradesFragment : Fragment(), ItemClickListener {
 
         gradeviewModel.gradeData.observe(viewLifecycleOwner) {
             Log.d("Grade Data", it.size.toString())
-            gradeAdapter.names = it
-            gradeAdapter.notifyDataSetChanged()
+            studyunitadapter.names = it
+            studyunitadapter.notifyDataSetChanged()
         }
     }
 

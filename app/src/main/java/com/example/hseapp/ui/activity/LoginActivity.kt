@@ -4,7 +4,6 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
-import android.widget.TextView
 import androidx.databinding.DataBindingUtil
 import com.example.hseapp.R
 import com.example.hseapp.databinding.ActivityLoginBinding
@@ -14,6 +13,8 @@ import com.example.hseapp.utils.Util
 class LoginActivity : AppCompatActivity() {
     lateinit var binding: ActivityLoginBinding
     private var roleSelected:String = Constants.STUDENT_ROLE
+
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
@@ -43,19 +44,22 @@ class LoginActivity : AppCompatActivity() {
         }
     }
 
-    fun setupButton(selectedView:Button, view1:Button, view2:Button) {
+    fun setupButton(selectedView:Button, firstView:Button, secondView:Button) {
         selectedView.background = getDrawable(R.drawable.role_background)
         selectedView.setTextColor(getColor(R.color.primary_hse_blue))
 
-        view1.setBackgroundColor(getColor(R.color.white))
-        view1.setTextColor(getColor(R.color.not_selected))
+        firstView.setBackgroundColor(getColor(R.color.white))
+        firstView.setTextColor(getColor(R.color.not_selected))
 
-        view2.setBackgroundColor(getColor(R.color.white))
-        view2.setTextColor(getColor(R.color.not_selected))
+        secondView.setBackgroundColor(getColor(R.color.white))
+        secondView.setTextColor(getColor(R.color.not_selected))
     }
 
     fun validation() {
-        if (Util.isValidEmail(binding.login.text.toString()) && Util.isValidPassword(binding.password.text.toString())) {
+        val emailCheck = Util.isValidEmail(binding.login.text.toString())
+        val passCheck = Util.isValidPassword(binding.password.text.toString())
+
+        if (emailCheck && passCheck) {
             Intent(this, HomeActivity::class.java).apply {
                 startActivity(this)
             }

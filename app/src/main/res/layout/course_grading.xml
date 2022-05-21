@@ -5,7 +5,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:background="@color/white"
     android:orientation="vertical"
-    android:paddingBottom="30dp">
+    android:paddingBottom="@dimen/img_corner">
 
     <TextView
         android:layout_width="wrap_content"
