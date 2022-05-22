@@ -9,7 +9,5 @@ object Constants {
     const val PROFESSOR_ROLE:String = "professor"
     const val CALENDAR_TIMETABLE:String = "Timetable"
     const val CALENDAR_ASSIGNMENT:String = "Assignments"
-    val EMAIL_ADDRESS_PATTERN:Pattern = Pattern.compile(
-        "\"^[A-Za-z0-9._%+-]+@edu.hse.ru\$\""
-    )
+    const val BASEURL: String = "https://dl.dropboxusercontent.com/s/"
 }
