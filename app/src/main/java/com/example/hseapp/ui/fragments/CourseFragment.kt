@@ -57,19 +57,48 @@ class CourseFragment : Fragment(),ItemClickListener {
     private fun observeLiveData() {
         courseviewModel.courseData.observe(viewLifecycleOwner) {
             Log.d("Course Data",it.size.toString())
-            courseAdapter.names = it
-            courseAdapter.notifyDataSetChanged()
+            if (it != null && it.size > 0) {
+                courseAdapter.names = it
+                courseAdapter.notifyDataSetChanged()
+                it[0].isSelected = true
+                setInfoData(it[0])
+            }
         }
 
-        teacherviewModel.teacherData.observe(viewLifecycleOwner) {
-            Log.d("Teacher Data", it.size.toString())
-            teacherAdapter.names = it
-            teacherAdapter.notifyDataSetChanged()
-        }
     }
 
     override fun onCourseClick(obj: Course) {
-        Toast.makeText(activity, "Course Clicked", Toast.LENGTH_SHORT).show()
+        //Toast.makeText(activity, "Course Clicked", Toast.LENGTH_SHORT).show()
+        setInfoData(obj)
+    }
+
+    private fun setInfoData(obj: Course) {
+        if (obj.courseInfo != null) {
+            if (obj.courseInfo.description != null) {
+                coursebinding.courseDescription.root.visibility = View.VISIBLE
+                coursebinding.courseDescription.courseDsc.text = obj.courseInfo.description
+            }
+            else {
+                coursebinding.courseDescription.root.visibility = View.GONE
+            }
+
+            if (obj.courseInfo.grading != null) {
+                coursebinding.courseGrading.root.visibility = View.VISIBLE
+                coursebinding.courseGrading.courseGrding.text = obj.courseInfo.grading
+            }
+            else {
+                coursebinding.courseGrading.root.visibility = View.GONE
+            }
+
+            if (obj.courseInfo.teachers != null && obj.courseInfo.teachers.size > 0) {
+                coursebinding.courseTeachingStaff.root.visibility = View.VISIBLE
+                teacherAdapter.names = obj.courseInfo.teachers
+                teacherAdapter.notifyDataSetChanged()
+            }
+            else {
+                coursebinding.courseTeachingStaff.root.visibility = View.GONE
+            }
+        }
     }
 
     override fun onPeriodClick(obj: Period) {

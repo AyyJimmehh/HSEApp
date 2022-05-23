@@ -50,7 +50,7 @@
                 android:layout_marginStart="@dimen/tab_top_start_margin"
                 android:layout_marginTop="@dimen/msg_padding"
                 tools:text = "123"
-                android:text="@{String.valueOf(course.msgCount)}"
+                android:text="@{course.msgCount}"
                 android:textSize="@dimen/msg_number_size"
                 android:fontFamily="@font/inter_medium"
                 android:background="@drawable/msg_counter"
