@@ -6,12 +6,13 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.hseapp.databinding.CalendarDayBinding
 import com.example.hseapp.datamodels.Day
+import com.example.hseapp.interfaces.ItemClickListener
 
 
-class DayAdapter(var names :ArrayList<Day>?): RecyclerView.Adapter<RecyclerView.ViewHolder>() {
+class DayAdapter(var names :ArrayList<Day>?,val obj: ItemClickListener): RecyclerView.Adapter<RecyclerView.ViewHolder>() {
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder {
         val binding = CalendarDayBinding.inflate(LayoutInflater.from(parent.context), parent, false)
-        return DayHolder(binding)
+        return DayHolder(binding, obj)
     }
 
     override fun onBindViewHolder(holder: RecyclerView.ViewHolder, position: Int) {
@@ -25,7 +26,7 @@ class DayAdapter(var names :ArrayList<Day>?): RecyclerView.Adapter<RecyclerView.
             0
     }
 
-    class DayHolder(val binding: CalendarDayBinding) : RecyclerView.ViewHolder(binding.root) {
+    class DayHolder(val binding: CalendarDayBinding, val obj: ItemClickListener) : RecyclerView.ViewHolder(binding.root) {
         fun bind(day: Day) {
             binding.day.text = day.day
             binding.table.layoutManager = LinearLayoutManager(
@@ -38,7 +39,7 @@ class DayAdapter(var names :ArrayList<Day>?): RecyclerView.Adapter<RecyclerView.
             }
 
             else {
-                var assignmentAdapter = AssignmentAdapter(day.assignments)
+                var assignmentAdapter = AssignmentAdapter(day.assignments, obj)
                 binding.table.adapter = assignmentAdapter
             }
         }

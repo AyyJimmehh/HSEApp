@@ -6,17 +6,22 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.core.view.isVisible
 import androidx.fragment.app.viewModels
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.hseapp.R
 import com.example.hseapp.databinding.FragmentCalendarBinding
+import com.example.hseapp.datamodels.Assignment
+import com.example.hseapp.datamodels.Course
+import com.example.hseapp.datamodels.Period
+import com.example.hseapp.interfaces.ItemClickListener
 import com.example.hseapp.ui.adapters.DayAdapter
 import com.example.hseapp.utils.Constants
 import com.example.hseapp.viewmodels.CalendarViewModel
 
 
-class CalendarFragment : Fragment() {
+class CalendarFragment : Fragment(), ItemClickListener {
     val dayviewModel by viewModels<CalendarViewModel>()
     lateinit var dayAdapter: DayAdapter
     lateinit var calendarbinding: FragmentCalendarBinding
@@ -40,7 +45,7 @@ class CalendarFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         calendarbinding.timetable.layoutManager = LinearLayoutManager(requireContext(),
             LinearLayoutManager.VERTICAL, false)
-        dayAdapter = DayAdapter(null)
+        dayAdapter = DayAdapter(null, this)
         calendarbinding.timetable.adapter = dayAdapter
 
         observeLiveData()
@@ -89,14 +94,12 @@ class CalendarFragment : Fragment() {
             calendarbinding.calendertoolbar.toolbarTitle.setCompoundDrawablesRelativeWithIntrinsicBounds(
                 0, 0, R.drawable.ic_arrow_down, 0)
         }
-        //Change drawable icon to downwards arrow dynamically
 
     }
 
 
     private fun observeLiveData() {
         dayviewModel.timetableData.observe(viewLifecycleOwner) {
-            Log.d("Period Data", it.size.toString())
             dayAdapter.names = it
             dayAdapter.notifyDataSetChanged()
         }
@@ -107,4 +110,15 @@ class CalendarFragment : Fragment() {
         fun newInstance() =
             CalendarFragment()
     }
+
+    override fun onCourseClick(obj: Course) {
+    }
+
+    override fun onPeriodClick(obj: Period) {
+    }
+
+    override fun onAssignmentClick(obj: Assignment) {
+        Toast.makeText(activity, "Assignment Clicked", Toast.LENGTH_SHORT).show()
+    }
+
 }

@@ -11,6 +11,7 @@ import androidx.fragment.app.viewModels
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.hseapp.ui.adapters.CourseAdapter
 import com.example.hseapp.databinding.FragmentCourseBinding
+import com.example.hseapp.datamodels.Assignment
 import com.example.hseapp.datamodels.Course
 import com.example.hseapp.datamodels.Period
 import com.example.hseapp.interfaces.ItemClickListener
@@ -56,7 +57,6 @@ class CourseFragment : Fragment(),ItemClickListener {
 
     private fun observeLiveData() {
         courseviewModel.courseData.observe(viewLifecycleOwner) {
-            Log.d("Course Data",it.size.toString())
             if (it != null && it.size > 0) {
                 courseAdapter.names = it
                 courseAdapter.notifyDataSetChanged()
@@ -102,6 +102,9 @@ class CourseFragment : Fragment(),ItemClickListener {
     }
 
     override fun onPeriodClick(obj: Period) {
+    }
+
+    override fun onAssignmentClick(obj: Assignment) {
     }
 
     companion object {

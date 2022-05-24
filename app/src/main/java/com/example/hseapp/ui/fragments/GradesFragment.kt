@@ -10,6 +10,7 @@ import android.widget.Toast
 import androidx.fragment.app.viewModels
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.hseapp.databinding.FragmentGradesBinding
+import com.example.hseapp.datamodels.Assignment
 import com.example.hseapp.datamodels.Course
 import com.example.hseapp.datamodels.Period
 import com.example.hseapp.interfaces.ItemClickListener
@@ -56,13 +57,11 @@ class GradesFragment : Fragment(), ItemClickListener {
 
     private fun observeLiveData() {
         periodviewModel.periodData.observe(viewLifecycleOwner) {
-            Log.d("Period Data",it.size.toString())
             periodAdapter.names = it
             periodAdapter.notifyDataSetChanged()
         }
 
         gradeviewModel.gradeData.observe(viewLifecycleOwner) {
-            Log.d("Grade Data", it.size.toString())
             studyunitadapter.names = it
             studyunitadapter.notifyDataSetChanged()
         }
@@ -79,5 +78,8 @@ class GradesFragment : Fragment(), ItemClickListener {
 
     override fun onPeriodClick(obj: Period) {
         Toast.makeText(activity, "Period Clicked", Toast.LENGTH_SHORT).show()
+    }
+
+    override fun onAssignmentClick(obj: Assignment) {
     }
 }
