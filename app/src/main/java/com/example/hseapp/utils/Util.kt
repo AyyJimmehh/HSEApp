@@ -2,7 +2,7 @@ package com.example.hseapp.utils
 
 object Util {
     fun isValidEmail(email:String?): Boolean {
-        return !email.isNullOrEmpty() //&& Constants.EMAIL_ADDRESS_PATTERN.matcher(email).matches()
+        return !email.isNullOrEmpty()
     }
 
     fun isValidPassword(pass:String?): Boolean {

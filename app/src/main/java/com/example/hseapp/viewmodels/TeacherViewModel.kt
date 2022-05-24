@@ -20,13 +20,5 @@ class TeacherViewModel : ViewModel() {
         teacherList.add(Teacher("George Varghese", "Seminarist", "196"))
 
         teacherData.value = teacherList*/
-
-        viewModelScope.launch {
-            val teacherResult = RetrofitHelper.getInstance().getTeachers()
-
-            if (teacherResult != null) {
-                teacherData.postValue(teacherResult.body()?.teachers)
-            }
-        }
     }
 }

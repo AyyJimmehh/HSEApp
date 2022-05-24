@@ -2,15 +2,17 @@ package com.example.hseapp.viewmodels
 
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import com.example.hseapp.datamodels.Course
+import androidx.lifecycle.viewModelScope
 import com.example.hseapp.datamodels.Grade
 import com.example.hseapp.datamodels.StudyUnit
+import com.example.hseapp.network.RetrofitHelper
+import kotlinx.coroutines.launch
 
 class GradeViewModel: ViewModel() {
     var gradeData: MutableLiveData<ArrayList<StudyUnit>> = MutableLiveData()
 
     fun getGrade() {
-        var gradeList = ArrayList<Grade>()
+        /*var gradeList = ArrayList<Grade>()
         gradeList.add(Grade("16", "Venus and Mars", "10", true))
         gradeList.add(Grade("17", "Venus and Mars", "10", false))
         gradeList.add(Grade("18", "Venus and Mars", "10", false))
@@ -26,6 +28,16 @@ class GradeViewModel: ViewModel() {
         unitList.add(StudyUnit("MODULE 1", gradeList))
         unitList.add(StudyUnit("MODULE 2", gradeList))
 
-        gradeData.value = unitList
+        gradeData.value = unitList*/
+
+        viewModelScope.launch {
+            val gradeResult = RetrofitHelper.getInstance().getGrades()
+
+            if (gradeResult != null) {
+                gradeData.postValue(gradeResult.body()?.grades)
+            }
+        }
     }
+
+
 }

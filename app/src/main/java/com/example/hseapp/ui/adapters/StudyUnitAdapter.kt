@@ -31,7 +31,7 @@ class StudyUnitAdapter(var names :ArrayList<StudyUnit>?): RecyclerView.Adapter<R
                 binding.root.context, LinearLayoutManager.VERTICAL,
                 false
             )
-                var gradeadapter = GradeAdapter(studyunit.grades)
+                var gradeadapter = GradeAdapter(studyunit.gradelist)
                 binding.grade.adapter = gradeadapter
         }
     }
