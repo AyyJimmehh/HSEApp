@@ -1,5 +1,6 @@
 package com.example.hseapp.ui.fragments
 
+import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import androidx.fragment.app.Fragment
@@ -16,6 +17,7 @@ import com.example.hseapp.datamodels.Assignment
 import com.example.hseapp.datamodels.Course
 import com.example.hseapp.datamodels.Period
 import com.example.hseapp.interfaces.ItemClickListener
+import com.example.hseapp.ui.activity.AssignmentInfoActivity
 import com.example.hseapp.ui.adapters.DayAdapter
 import com.example.hseapp.utils.Constants
 import com.example.hseapp.viewmodels.CalendarViewModel
@@ -103,6 +105,14 @@ class CalendarFragment : Fragment(), ItemClickListener {
             dayAdapter.names = it
             dayAdapter.notifyDataSetChanged()
         }
+        dayviewModel.loader.observe(viewLifecycleOwner){
+            if (it) {
+                calendarbinding.loader.visibility = View.VISIBLE
+            }
+            else {
+                calendarbinding.loader.visibility = View.GONE
+            }
+        }
     }
 
     companion object {
@@ -119,6 +129,11 @@ class CalendarFragment : Fragment(), ItemClickListener {
 
     override fun onAssignmentClick(obj: Assignment) {
         Toast.makeText(activity, "Assignment Clicked", Toast.LENGTH_SHORT).show()
+
+        Intent(requireContext(), AssignmentInfoActivity::class.java).apply {
+            putExtra(Constants.ASSIGNMENT_INFO, obj)
+            startActivity(this)
+        }
     }
 
 }

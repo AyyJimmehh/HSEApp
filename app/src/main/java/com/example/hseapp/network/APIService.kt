@@ -3,6 +3,7 @@ package com.example.hseapp.network
 import com.example.hseapp.datamodels.CalendarResponse
 import com.example.hseapp.datamodels.Course
 import com.example.hseapp.datamodels.GradeResponse
+import com.example.hseapp.datamodels.User
 import retrofit2.Response
 import retrofit2.http.GET
 
@@ -18,4 +19,7 @@ interface APIService {
 
      @GET("i3b60ujk4zvueu7/Grades.json?dl=0")
      suspend fun getGrades() : Response<GradeResponse>
+
+     @GET("std13o92ucj17vx/User.json?dl=0")
+     suspend fun getUsers() : Response<ArrayList<User>>
 }

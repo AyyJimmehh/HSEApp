@@ -12,6 +12,7 @@ import kotlinx.coroutines.launch
 
 class CalendarViewModel : ViewModel() {
     var timetableData: MutableLiveData<ArrayList<Day>> = MutableLiveData()
+    val loader: MutableLiveData<Boolean> = MutableLiveData()
 
     fun getTimetable() {
        /* var timetablelist = ArrayList<Timetable>()
@@ -28,10 +29,12 @@ class CalendarViewModel : ViewModel() {
         timetableData.value = tableList*/
 
         viewModelScope.launch {
+            loader.postValue(true)
             val timetableResult = RetrofitHelper.getInstance().getTimetable()
 
             if (timetableResult != null) {
                 timetableData.postValue(timetableResult.body()?.days)
+                loader.postValue(false )
             }
         }
     }
@@ -51,10 +54,12 @@ class CalendarViewModel : ViewModel() {
         timetableData.value = tableList*/
 
         viewModelScope.launch {
+            loader.postValue(true)
             val assignmentResult = RetrofitHelper.getInstance().getAssignments()
 
             if (assignmentResult != null) {
                 timetableData.postValue(assignmentResult.body()?.days)
+                loader.postValue(false )
             }
         }
     }
