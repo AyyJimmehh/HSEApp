@@ -10,6 +10,7 @@ import kotlinx.coroutines.launch
 
 class GradeViewModel: ViewModel() {
     var gradeData: MutableLiveData<ArrayList<StudyUnit>> = MutableLiveData()
+    val loader: MutableLiveData<Boolean> = MutableLiveData()
 
     fun getGrade() {
         /*var gradeList = ArrayList<Grade>()
@@ -31,10 +32,12 @@ class GradeViewModel: ViewModel() {
         gradeData.value = unitList*/
 
         viewModelScope.launch {
+            loader.postValue(true)
             val gradeResult = RetrofitHelper.getInstance().getGrades()
-
             if (gradeResult != null) {
                 gradeData.postValue(gradeResult.body()?.grades)
+                loader.postValue(false)
+
             }
         }
     }

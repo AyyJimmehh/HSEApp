@@ -65,6 +65,15 @@ class GradesFragment : Fragment(), ItemClickListener {
             studyunitadapter.names = it
             studyunitadapter.notifyDataSetChanged()
         }
+
+            gradeviewModel.loader.observe(viewLifecycleOwner){
+                if (it) {
+                    gradebinding.loader.visibility = View.VISIBLE
+                }
+                else {
+                    gradebinding.loader.visibility = View.GONE
+                }
+            }
     }
 
     companion object {
