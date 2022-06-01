@@ -16,14 +16,17 @@
         <entry key="..\:/Steve/HSEApp/app/src/main/res/drawable/ic_online.xml" value="0.209" />
         <entry key="..\:/Steve/HSEApp/app/src/main/res/drawable/ic_user.xml" value="0.168" />
         <entry key="..\:/Steve/HSEApp/app/src/main/res/drawable/icon_selector.xml" value="0.139" />
+        <entry key="..\:/Steve/HSEApp/app/src/main/res/drawable/lightblue_rounded.xml" value="0.2" />
         <entry key="..\:/Steve/HSEApp/app/src/main/res/drawable/login_background.xml" value="0.1595" />
         <entry key="..\:/Steve/HSEApp/app/src/main/res/drawable/loginpass_background.xml" value="0.189" />
         <entry key="..\:/Steve/HSEApp/app/src/main/res/drawable/msg_counter.xml" value="0.1395" />
         <entry key="..\:/Steve/HSEApp/app/src/main/res/drawable/role_background.xml" value="0.1935" />
         <entry key="..\:/Steve/HSEApp/app/src/main/res/drawable/submission_background.xml" value="0.1985" />
+        <entry key="..\:/Steve/HSEApp/app/src/main/res/drawable/textbox_background.xml" value="0.214" />
         <entry key="..\:/Steve/HSEApp/app/src/main/res/drawable/textcolor_background.xml" value="0.189" />
         <entry key="..\:/Steve/HSEApp/app/src/main/res/font/sf_mono_medium.xml" value="0.325" />
         <entry key="..\:/Steve/HSEApp/app/src/main/res/layout/activity_assignment_info.xml" value="0.253125" />
+        <entry key="..\:/Steve/HSEApp/app/src/main/res/layout/activity_chat.xml" value="0.253125" />
         <entry key="..\:/Steve/HSEApp/app/src/main/res/layout/activity_home.xml" value="0.22" />
         <entry key="..\:/Steve/HSEApp/app/src/main/res/layout/activity_login.xml" value="0.25" />
         <entry key="..\:/Steve/HSEApp/app/src/main/res/layout/activity_splash.xml" value="0.25" />
@@ -33,6 +36,9 @@
         <entry key="..\:/Steve/HSEApp/app/src/main/res/layout/calendar_timetable.xml" value="0.33" />
         <entry key="..\:/Steve/HSEApp/app/src/main/res/layout/calendar_toolbar.xml" value="0.25052083333333336" />
         <entry key="..\:/Steve/HSEApp/app/src/main/res/layout/chat_description.xml" value="0.33645833333333336" />
+        <entry key="..\:/Steve/HSEApp/app/src/main/res/layout/chat_message_bar.xml" value="0.5" />
+        <entry key="..\:/Steve/HSEApp/app/src/main/res/layout/chat_message_other.xml" value="0.5" />
+        <entry key="..\:/Steve/HSEApp/app/src/main/res/layout/chat_message_user.xml" value="0.5" />
         <entry key="..\:/Steve/HSEApp/app/src/main/res/layout/course_chat.xml" value="0.33" />
         <entry key="..\:/Steve/HSEApp/app/src/main/res/layout/course_description.xml" value="0.33645833333333336" />
         <entry key="..\:/Steve/HSEApp/app/src/main/res/layout/course_grading.xml" value="0.33645833333333336" />
@@ -60,6 +66,7 @@
         <entry key="..\:/Steve/HSEApp/app/src/main/res/layout/submission_time.xml" value="0.67" />
         <entry key="..\:/Steve/HSEApp/app/src/main/res/layout/teacher.xml" value="0.5" />
         <entry key="..\:/Steve/HSEApp/app/src/main/res/layout/toolbar.xml" value="0.36770833333333336" />
+        <entry key="..\:/Steve/HSEApp/app/src/main/res/layout/toolbar_chat.xml" value="0.5" />
         <entry key="..\:/Steve/HSEApp/app/src/main/res/menu/hse_menu.xml" value="0.2578125" />
       </map>
     </option>

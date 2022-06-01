@@ -3,9 +3,11 @@
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
     <color name="primary_hse_blue">#1F4EC7</color>
+    <color name="courses_hse_blue">#DDE5F6</color>
     <color name="selected_hse_blue">#261F4EC7</color>
     <color name="not_selected">#94000000</color>
     <color name="icon_not_selected">#B8B8B8</color>
     <color name="toolbar_background">#F5F5F5</color>
     <color name="divider">#14000000</color>
+    <color name="message_time">#4D000000</color>
 </resources>

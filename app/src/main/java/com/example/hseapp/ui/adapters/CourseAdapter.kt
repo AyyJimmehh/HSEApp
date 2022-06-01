@@ -2,7 +2,9 @@ package com.example.hseapp.ui.adapters
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import androidx.core.content.ContextCompat.getColor
 import androidx.recyclerview.widget.RecyclerView
+import com.example.hseapp.R
 import com.example.hseapp.databinding.CourselistBinding
 import com.example.hseapp.datamodels.Course
 import com.example.hseapp.interfaces.ItemClickListener
@@ -15,6 +17,7 @@ class CourseAdapter(var names: ArrayList<Course>?, val obj: ItemClickListener): 
 
     override fun onBindViewHolder(holder: RecyclerView.ViewHolder, position: Int) {
         (holder as CourseHolder).bind(names!![position])
+
     }
 
     override fun getItemCount(): Int {
@@ -28,6 +31,16 @@ class CourseAdapter(var names: ArrayList<Course>?, val obj: ItemClickListener): 
         fun bind(course: Course) {
             binding.course = course
 
+            if(course.isSelected) {
+                binding.root.setBackgroundResource(R.color.courses_hse_blue)
+                binding.subject.setBackgroundResource(R.color.primary_hse_blue)
+            }
+
+            else {
+                binding.root.setBackgroundResource(R.color.white)
+                binding.subject.setBackgroundResource(R.color.not_selected)
+            }
+            
             binding.root.setOnClickListener {
                 obj.onCourseClick(course)
             }
