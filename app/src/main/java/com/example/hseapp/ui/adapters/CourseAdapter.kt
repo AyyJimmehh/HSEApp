@@ -33,12 +33,12 @@ class CourseAdapter(var names: ArrayList<Course>?, val obj: ItemClickListener): 
 
             if(course.isSelected) {
                 binding.root.setBackgroundResource(R.color.courses_hse_blue)
-                binding.subject.setBackgroundResource(R.color.primary_hse_blue)
+                binding.subject.setTextColor(binding.root.context.getColor(R.color.primary_hse_blue))
             }
 
             else {
                 binding.root.setBackgroundResource(R.color.white)
-                binding.subject.setBackgroundResource(R.color.not_selected)
+                binding.subject.setTextColor(binding.root.context.getColor(R.color.not_selected))
             }
             
             binding.root.setOnClickListener {

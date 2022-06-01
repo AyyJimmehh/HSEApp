@@ -1,12 +1,10 @@
 package com.example.hseapp.ui.fragments
 
 import android.os.Bundle
-import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Toast
 import androidx.fragment.app.viewModels
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.hseapp.ui.adapters.CourseAdapter
@@ -17,14 +15,12 @@ import com.example.hseapp.datamodels.Period
 import com.example.hseapp.interfaces.ItemClickListener
 import com.example.hseapp.ui.adapters.TeacherAdapter
 import com.example.hseapp.viewmodels.CourseViewModel
-import com.example.hseapp.viewmodels.TeacherViewModel
 
 class CourseFragment : Fragment(),ItemClickListener {
     val courseviewModel by viewModels<CourseViewModel>()
     lateinit var coursebinding: FragmentCourseBinding
     lateinit var courseAdapter : CourseAdapter
 
-    val teacherviewModel by viewModels<TeacherViewModel>()
     lateinit var teacherAdapter : TeacherAdapter
 
     override fun onCreateView(
@@ -52,7 +48,6 @@ class CourseFragment : Fragment(),ItemClickListener {
         observeLiveData()
 
         courseviewModel.getCourses()
-        teacherviewModel.getTeacher()
     }
 
     private fun observeLiveData() {
@@ -68,8 +63,16 @@ class CourseFragment : Fragment(),ItemClickListener {
     }
 
     override fun onCourseClick(obj: Course) {
-        //Toast.makeText(activity, "Course Clicked", Toast.LENGTH_SHORT).show()
+        setCoursesData(obj)
         setInfoData(obj)
+    }
+
+    private fun setCoursesData(obj: Course) {
+        for(course in courseviewModel.courseData.value!!) {
+            course.isSelected = course == obj
+        }
+        courseAdapter.names = courseviewModel.courseData.value
+        courseAdapter.notifyDataSetChanged()
     }
 
     private fun setInfoData(obj: Course) {
