@@ -8,6 +8,7 @@ import com.example.hseapp.R
 import com.example.hseapp.databinding.CourselistBinding
 import com.example.hseapp.datamodels.Course
 import com.example.hseapp.interfaces.ItemClickListener
+import com.google.android.material.card.MaterialCardView
 
 class CourseAdapter(var names: ArrayList<Course>?, val obj: ItemClickListener): RecyclerView.Adapter<RecyclerView.ViewHolder>() {
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder {
@@ -30,14 +31,15 @@ class CourseAdapter(var names: ArrayList<Course>?, val obj: ItemClickListener): 
     class CourseHolder(val binding: CourselistBinding, val obj: ItemClickListener) : RecyclerView.ViewHolder(binding.root) {
         fun bind(course: Course) {
             binding.course = course
+            var cardView : MaterialCardView =  binding.root as MaterialCardView
 
             if(course.isSelected) {
-                binding.root.setBackgroundResource(R.color.courses_hse_blue)
+                cardView.setCardBackgroundColor(cardView.context.getColor(R.color.courses_hse_blue))
                 binding.subject.setTextColor(binding.root.context.getColor(R.color.primary_hse_blue))
             }
 
             else {
-                binding.root.setBackgroundResource(R.color.white)
+                cardView.setCardBackgroundColor(cardView.context.getColor(R.color.white))
                 binding.subject.setTextColor(binding.root.context.getColor(R.color.not_selected))
             }
             

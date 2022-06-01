@@ -86,7 +86,16 @@ class GradesFragment : Fragment(), ItemClickListener {
     }
 
     override fun onPeriodClick(obj: Period) {
-        Toast.makeText(activity, "Period Clicked", Toast.LENGTH_SHORT).show()
+        //Toast.makeText(activity, "Period Clicked", Toast.LENGTH_SHORT).show()
+        setPeriodData(obj)
+    }
+
+    private fun setPeriodData(obj: Period) {
+        for(period in periodviewModel.periodData.value!!) {
+            period.isSelected = period == obj
+        }
+        periodAdapter.names = periodviewModel.periodData.value
+        periodAdapter.notifyDataSetChanged()
     }
 
     override fun onAssignmentClick(obj: Assignment) {
