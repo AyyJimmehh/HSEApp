@@ -15,18 +15,6 @@ class CalendarViewModel : ViewModel() {
     val loader: MutableLiveData<Boolean> = MutableLiveData()
 
     fun getTimetable() {
-       /* var timetablelist = ArrayList<Timetable>()
-        timetablelist.add(Timetable("09:30", "10:50", "LECTURE", "Optimization Methods (Eng)", "Online"))
-        timetablelist.add(Timetable("11:10", "12:30", "LECTURE", "Machine Learning 1 (Eng)", "Online"))
-
-        var tableList = ArrayList<Day>()
-        tableList.add(Day("MONDAY, 10 JANUARY", timetablelist, null))
-        tableList.add(Day("TUESDAY, 11 JANUARY", timetablelist, null))
-        tableList.add(Day("WEDNESDAY, 12 JANUARY", timetablelist, null))
-        tableList.add(Day("THURSDAT, 13 JANUARY", timetablelist, null))
-        tableList.add(Day("FRIDAY, 14 JANUARY", timetablelist, null))
-
-        timetableData.value = tableList*/
 
         viewModelScope.launch {
             loader.postValue(true)
@@ -40,18 +28,6 @@ class CalendarViewModel : ViewModel() {
     }
 
     fun getAssignments() {
-        /*var assignmentlist = ArrayList<Assignment>()
-        assignmentlist.add(Assignment("Machine Learning 1 (Eng)", "HW 14: Venus and Mars", "Till 23:59", "Submitted at 00:00"))
-        assignmentlist.add(Assignment("Optimization Methods (Eng)", "HW 2: Optimizer", "Till 23:59", "Submitted at 00:00"))
-
-        var tableList = ArrayList<Day>()
-        tableList.add(Day("MONDAY, 10 JANUARY", null, assignmentlist))
-        tableList.add(Day("TUESDAY, 11 JANUARY", null, assignmentlist))
-        tableList.add(Day("WEDNESDAY, 12 JANUARY", null, assignmentlist))
-        tableList.add(Day("THURSDAT, 13 JANUARY", null, assignmentlist))
-        tableList.add(Day("FRIDAY, 14 JANUARY", null, assignmentlist))
-
-        timetableData.value = tableList*/
 
         viewModelScope.launch {
             loader.postValue(true)

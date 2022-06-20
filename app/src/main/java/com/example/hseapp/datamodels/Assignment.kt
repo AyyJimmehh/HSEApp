@@ -6,4 +6,5 @@ data class Assignment(
     var subject:String,
     var name:String,
     var deadline: String,
-    var submission: String):Serializable
+    var submission: String
+    ):Serializable

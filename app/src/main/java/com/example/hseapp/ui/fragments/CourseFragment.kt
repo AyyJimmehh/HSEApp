@@ -1,5 +1,6 @@
 package com.example.hseapp.ui.fragments
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -10,13 +11,19 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.hseapp.ui.adapters.CourseAdapter
 import com.example.hseapp.databinding.FragmentCourseBinding
 import com.example.hseapp.datamodels.Assignment
+import com.example.hseapp.datamodels.ChatInfo
 import com.example.hseapp.datamodels.Course
 import com.example.hseapp.datamodels.Period
 import com.example.hseapp.interfaces.ItemClickListener
+import com.example.hseapp.ui.activity.AssignmentInfoActivity
+import com.example.hseapp.ui.activity.ChatActivity
 import com.example.hseapp.ui.adapters.TeacherAdapter
+import com.example.hseapp.utils.Constants
 import com.example.hseapp.viewmodels.CourseViewModel
 
 class CourseFragment : Fragment(),ItemClickListener {
+
+    lateinit var selectedCourse: Course
     val courseviewModel by viewModels<CourseViewModel>()
     lateinit var coursebinding: FragmentCourseBinding
     lateinit var courseAdapter : CourseAdapter
@@ -46,7 +53,7 @@ class CourseFragment : Fragment(),ItemClickListener {
         coursebinding.courseTeachingStaff.teacherRecycler.adapter = teacherAdapter
 
         observeLiveData()
-
+        initView()
         courseviewModel.getCourses()
     }
 
@@ -55,6 +62,7 @@ class CourseFragment : Fragment(),ItemClickListener {
             if (it != null && it.size > 0) {
                 courseAdapter.names = it
                 courseAdapter.notifyDataSetChanged()
+                selectedCourse = it[0]
                 it[0].isSelected = true
                 setInfoData(it[0])
             }
@@ -62,9 +70,31 @@ class CourseFragment : Fragment(),ItemClickListener {
 
     }
 
+    fun initView() {
+        coursebinding.chats.firstchat.setOnClickListener {
+            navigateToChat(selectedCourse.courseInfo.chatlist[0])
+        }
+
+        coursebinding.chats.secondchat.setOnClickListener {
+            navigateToChat(selectedCourse.courseInfo.chatlist[1])
+        }
+
+        coursebinding.chats.thirdchat.setOnClickListener {
+            navigateToChat(selectedCourse.courseInfo.chatlist[2])
+        }
+    }
+
+    private fun navigateToChat(chatInfo: ChatInfo) {
+        Intent(requireContext(), ChatActivity::class.java).apply {
+            putExtra(Constants.CHAT_INFO, chatInfo)
+            startActivity(this)
+        }
+    }
+
     override fun onCourseClick(obj: Course) {
         setCoursesData(obj)
         setInfoData(obj)
+        selectedCourse = obj
     }
 
     private fun setCoursesData(obj: Course) {
@@ -100,6 +130,27 @@ class CourseFragment : Fragment(),ItemClickListener {
             }
             else {
                 coursebinding.courseTeachingStaff.root.visibility = View.GONE
+            }
+
+            if(obj.courseInfo.chatlist != null && obj.courseInfo.chatlist.size == 3) {
+                coursebinding.chats.root.visibility = View.VISIBLE
+                coursebinding.chats.firstchatName.text = obj.courseInfo.chatlist[0].chatname
+                coursebinding.chats.firstchatLastmsg.text = obj.courseInfo.chatlist[0].lastmessage
+                coursebinding.chats.firstchatLastuser.text = obj.courseInfo.chatlist[0].lastsender
+                coursebinding.chats.firstchatMsgcount.text = obj.courseInfo.chatlist[0].count.toString()
+
+                coursebinding.chats.secondchatName.text = obj.courseInfo.chatlist[1].chatname
+                coursebinding.chats.secondchatLastmsg.text = obj.courseInfo.chatlist[1].lastmessage
+                coursebinding.chats.secondchatLastuser.text = obj.courseInfo.chatlist[1].lastsender
+                coursebinding.chats.secondchatMsgcount.text = obj.courseInfo.chatlist[1].count.toString()
+
+                coursebinding.chats.thirdchatName.text = obj.courseInfo.chatlist[2].chatname
+                coursebinding.chats.thirdchatLastmsg.text = obj.courseInfo.chatlist[2].lastmessage
+                coursebinding.chats.thirdchatLastuser.text = obj.courseInfo.chatlist[2].lastsender
+                coursebinding.chats.thirdchatMsgcount.text = obj.courseInfo.chatlist[2].count.toString()
+            }
+            else {
+                coursebinding.chats.root.visibility = View.GONE
             }
         }
     }

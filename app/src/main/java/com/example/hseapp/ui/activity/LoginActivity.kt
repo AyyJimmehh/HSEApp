@@ -10,7 +10,6 @@ import androidx.databinding.DataBindingUtil
 import com.example.hseapp.R
 import com.example.hseapp.databinding.ActivityLoginBinding
 import com.example.hseapp.utils.Constants
-import com.example.hseapp.utils.Util
 import com.example.hseapp.viewmodels.LoginViewModel
 
 class LoginActivity : AppCompatActivity() {

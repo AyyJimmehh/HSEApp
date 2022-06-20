@@ -12,7 +12,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.HSEApp" >
         <activity
-            android:name=".ChatActivity"
+            android:name=".ui.activity.ChatActivity"
             android:exported="false" />
         <activity
             android:name=".ui.activity.AssignmentInfoActivity"

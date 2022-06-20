@@ -12,14 +12,6 @@ class CourseViewModel:ViewModel() {
     //val loader: MutableLiveData<Boolean> = MutableLiveData()
 
     fun getCourses() {
-        /*var courseList = ArrayList<Course>()
-        courseList.add(Course("Linear Algebra", 120, true))
-        courseList.add(Course("Time Series", 120, false))
-        courseList.add(Course("Econometrics", 120, false))
-        courseList.add(Course("Discrete Maths", 120, false))
-        courseList.add(Course("Economics", 120, false))
-
-        courseData.value = courseList*/
 
         viewModelScope.launch {
             //loader.postValue(true)

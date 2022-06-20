@@ -9,6 +9,7 @@ object Constants {
     const val PROFESSOR_ROLE:String = "professor"
     const val CALENDAR_TIMETABLE:String = "Timetable"
     const val CALENDAR_ASSIGNMENT:String = "Assignments"
+    const val CHAT_INFO:String = "Chat Info"
     const val ASSIGNMENT_INFO:String = "Assignment"
     const val BASEURL: String = "https://dl.dropboxusercontent.com/s/"
 }

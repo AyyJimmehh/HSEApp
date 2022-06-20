@@ -128,7 +128,6 @@ class CalendarFragment : Fragment(), ItemClickListener {
     }
 
     override fun onAssignmentClick(obj: Assignment) {
-        //Toast.makeText(activity, "Assignment Clicked", Toast.LENGTH_SHORT).show()
 
         Intent(requireContext(), AssignmentInfoActivity::class.java).apply {
             putExtra(Constants.ASSIGNMENT_INFO, obj)
