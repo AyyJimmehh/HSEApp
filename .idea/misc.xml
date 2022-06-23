@@ -58,6 +58,7 @@
         <entry key="..\:/Steve/HSEApp/app/src/main/res/layout/grade_unit.xml" value="0.33" />
         <entry key="..\:/Steve/HSEApp/app/src/main/res/layout/inner_toolbar.xml" value="0.33" />
         <entry key="..\:/Steve/HSEApp/app/src/main/res/layout/periodlist.xml" value="0.24583333333333332" />
+        <entry key="..\:/Steve/HSEApp/app/src/main/res/layout/profile_email_location.xml" value="0.5" />
         <entry key="..\:/Steve/HSEApp/app/src/main/res/layout/profile_info.xml" value="0.33" />
         <entry key="..\:/Steve/HSEApp/app/src/main/res/layout/submission_area.xml" value="0.33" />
         <entry key="..\:/Steve/HSEApp/app/src/main/res/layout/submission_description.xml" value="0.33229166666666665" />
@@ -66,7 +67,8 @@
         <entry key="..\:/Steve/HSEApp/app/src/main/res/layout/submission_time.xml" value="0.67" />
         <entry key="..\:/Steve/HSEApp/app/src/main/res/layout/teacher.xml" value="0.5" />
         <entry key="..\:/Steve/HSEApp/app/src/main/res/layout/toolbar.xml" value="0.36770833333333336" />
-        <entry key="..\:/Steve/HSEApp/app/src/main/res/layout/toolbar_chat.xml" value="0.5" />
+        <entry key="..\:/Steve/HSEApp/app/src/main/res/layout/toolbar_chat.xml" value="0.33" />
+        <entry key="..\:/Steve/HSEApp/app/src/main/res/layout/toolbar_profile.xml" value="0.2671875" />
         <entry key="..\:/Steve/HSEApp/app/src/main/res/menu/hse_menu.xml" value="0.2578125" />
       </map>
     </option>

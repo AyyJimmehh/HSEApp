@@ -66,6 +66,15 @@ class CourseFragment : Fragment(),ItemClickListener {
                 it[0].isSelected = true
                 setInfoData(it[0])
             }
+
+            courseviewModel.loader.observe(viewLifecycleOwner){
+                if (it) {
+                    coursebinding.loader.visibility = View.VISIBLE
+                }
+                else {
+                    coursebinding.loader.visibility = View.GONE
+                }
+            }
         }
 
     }

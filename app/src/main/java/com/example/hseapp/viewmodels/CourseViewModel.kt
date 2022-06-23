@@ -9,16 +9,16 @@ import kotlinx.coroutines.launch
 
 class CourseViewModel:ViewModel() {
     var courseData:MutableLiveData<ArrayList<Course>> = MutableLiveData()
-    //val loader: MutableLiveData<Boolean> = MutableLiveData()
+    val loader: MutableLiveData<Boolean> = MutableLiveData()
 
     fun getCourses() {
 
         viewModelScope.launch {
-            //loader.postValue(true)
+            loader.postValue(true)
             val courseResult = RetrofitHelper.getInstance().getCourses()
             if (courseResult != null) {
                 courseData.postValue(courseResult.body())
-                //loader.postValue(false)
+                loader.postValue(false)
             }
         }
     }

@@ -13,6 +13,9 @@ import com.example.hseapp.ui.adapters.ChatAdapter
 import com.example.hseapp.ui.adapters.StudyUnitAdapter
 import com.example.hseapp.utils.Constants
 import com.example.hseapp.viewmodels.ChatViewModel
+import java.text.SimpleDateFormat
+import java.util.*
+import kotlin.collections.ArrayList
 
 class ChatActivity : AppCompatActivity() {
     lateinit var chatAdapter: ChatAdapter
@@ -62,7 +65,9 @@ class ChatActivity : AppCompatActivity() {
     }
 
     private fun getCurrentTime(): String {
-        return "12:30"
+        val presentTime_Date = Calendar.getInstance().time
+        val dateFormat = SimpleDateFormat("HH:mm")
+        return dateFormat.format(presentTime_Date)
     }
 
     private fun observeLiveData() {
